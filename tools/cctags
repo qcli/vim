@@ -1,0 +1,17 @@
+#!/bin/sh
+OUT_PATH=${PWD}
+SRC_PATH=${PWD}
+ 
+if [ -d ${OUT_PATH} ];
+then
+	echo "Use current directory \"${OUT_PATH}}\""
+else
+	echo "mkdir \"${OUT_PATH}\""
+	mkdir ${OUT_PATH}
+fi
+			 
+find -L ${SRC_PATH}/ -name "*.h" -o -name "*.cpp" -o -name "*.cc" -o -name "*.c" -o -name "*.java" -o -name "*.php" |grep -vi '\.git' >>${OUT_PATH}/cscope.file
+			 
+echo "For create ctags databases.."
+ctags -L ${OUT_PATH}/cscope.file -f ${OUT_PATH}/tags
+echo "DONE!!"
