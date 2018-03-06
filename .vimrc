@@ -11,6 +11,8 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 Plugin 'tmhedberg/SimpylFold'
+Plugin 'bling/vim-airline'
+Bundle 'terryma/vim-multiple-cursors'
 " Add all your plugins here (note older versions of Vundle used Bundle
 " instead of Plugin)
 " All of your Plugins must be added before the following line
@@ -199,3 +201,53 @@ function HeaderPython()
 	normal o
 endf
 autocmd bufnewfile *.py call HeaderPython()
+
+"emmet Emmet的基本用法：先写简写形式，然后用"<Ctrl+y>,"将其转成HTML代码
+"#####基本规则:
+"1. E 代表HTML标签
+"2. E#id 代表标签E有id属性
+"3. E.class 代表E有class属性
+"4. E[attr=foo] 代表某个特定属性
+"5. E{info} 代表标签E包含的内容是info
+"6. E>N 代表N是E的子元素
+"7. E+N 代表N是E的同级元素
+"8. E^N 代表N是E的上级元素
+
+let g:user_emmet_settings = {
+  \  'php' : {
+  \    'extends' : 'html',
+  \    'filters' : 'c',
+  \  },
+  \  'xml' : {
+  \    'extends' : 'html',
+  \  },
+  \  'haml' : {
+  \    'extends' : 'html',
+  \  },
+  \}
+
+"airline
+set ambiwidth=double
+
+"ctrlp
+"<ctrl-p> start 
+"<ctrl-r> to switch to regexp mode.
+"<c-f> and <c-b> to cycle between modes(buffer, file, mru).
+let g:ctrlp_custom_ignore = {
+    \ 'dir':  '\v[\/]\.(git|hg|svn|rvm)$',
+    \ 'file': '\v\.(exe|so|dll|zip|tar|tar.gz|pyc|o|a)$',
+    \ }
+let g:ctrlp_working_path_mode=0
+let g:ctrlp_match_window_bottom=1
+let g:ctrlp_max_height=15
+let g:ctrlp_match_window_reversed=0
+let g:ctrlp_mruf_max=500
+let g:ctrlp_follow_symlinks=1
+let g:ctrlp_max_files = 0
+
+"multiple cursors
+" Default mapping
+" let g:multi_cursor_next_key='<C-n>'
+" let g:multi_cursor_prev_key='<C-p>'
+" let g:multi_cursor_skip_key='<C-x>'
+" let g:multi_cursor_quit_key='<Esc>'
