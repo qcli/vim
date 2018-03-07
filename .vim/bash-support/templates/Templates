@@ -4,9 +4,9 @@
 
 SetMacro( 'AUTHOR',      'qcli' )
 SetMacro( 'AUTHORREF',   '' )
-SetMacro( 'COMPANY',     'Fortinet' )
+SetMacro( 'COMPANY',     '' )
 SetMacro( 'COPYRIGHT',   'Copyright (c) |YEAR|, |AUTHOR|' )
-SetMacro( 'EMAIL',       'qcli@fortinet.com' )
+SetMacro( 'EMAIL',       'qcli@xxx.com' )
 SetMacro( 'LICENSE',     'GNU General Public License' )
 SetMacro( 'ORGANIZATION','' )
 
