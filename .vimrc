@@ -91,6 +91,8 @@ nmap <F6>b :VCSBlame<CR>
 nmap <F6>d :VCSDiff<CR>
 nmap <F6>l :VCSLog<CR>
 nmap <F6>vd :VCSVimDiff<CR>
+"查看commit下的修改文件
+nmap <F6>lf :VCSLog  -p --name-only<CR>  
 
 let g:winManagerWindowLayout='FileExplorer|BufExplorer'
 let g:persistentBehaviour=0
