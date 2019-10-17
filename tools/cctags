@@ -10,8 +10,8 @@ else
 	mkdir ${OUT_PATH}
 fi
 			 
-find -L ${SRC_PATH}/ -name "*.h" -o -name "*.cpp" -o -name "*.cc" -o -name "*.c" -o -name "*.java" -o -name "*.php" |grep -vi '\.git' >>${OUT_PATH}/cscope.file
+find -L ${SRC_PATH}/ -name "*.h" -o -name "*.cpp" -o -name "*.cc" -o -name "*.c" -o -name "*.java" -o -name "*.php" -o -name "*.py" -o -name "*.go" |grep -vi '\.git' >>${OUT_PATH}/cscope.files
 			 
 echo "For create ctags databases.."
-ctags -L ${OUT_PATH}/cscope.file -f ${OUT_PATH}/tags
+ctags -L ${OUT_PATH}/cscope.files -f ${OUT_PATH}/tags
 echo "DONE!!"
